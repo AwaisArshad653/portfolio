@@ -1,0 +1,330 @@
+{
+  "personal": {
+    "full_name": "Awais Arshad",
+    "title": "Senior PHP/Laravel Developer",
+    "about_me": "Senior PHP/Laravel Developer with over 6 years of experience delivering scalable web applications. Skilled in Laravel, Vue.js, GraphQL, and Node.js with strong expertise in REST APIs, real-time applications, and database optimization. Proven track record of building enterprise-grade solutions, mentoring junior developers, and thriving in remote Agile teams.",
+    "location": "Lahore, Pakistan",
+    "avatarUrl": "/user-files/avatar/profile.png-1777034160082.png",
+    "cvUrl": "/user-files/cv/cv.pdf",
+    "custom_links": [
+      {
+        "icon": "email",
+        "title": "Email",
+        "url": "m.awaisarshad653@gmail.com"
+      },
+      {
+        "icon": "github",
+        "title": "GitHub",
+        "url": "https://github.com/AwaisArshad653"
+      },
+      {
+        "icon": "linkedin",
+        "title": "LinkedIn",
+        "url": "https://linkedin.com/in/awais-arshad-41a00518a"
+      }
+    ]
+  },
+  "selectedComponents": {
+    "userInfo": "minimalProfile",
+    "skills": "orbitingCircles",
+    "projects": "threeDCard",
+    "workExperience": "card",
+    "education": "card"
+  },
+  "sectionOrder": [
+    "personal",
+    "experience",
+    "education",
+    "projects",
+    "skills"
+  ],
+  "themePreset": "default",
+  "skills": [
+    {
+      "name": "PHP",
+      "logo": "/icons/php/php-original.svg"
+    },
+    {
+      "name": "Laravel",
+      "logo": "/icons/laravel/laravel-original.svg"
+    },
+    {
+      "name": "CodeIgniter",
+      "logo": "/icons/codeigniter/codeigniter-original.svg"
+    },
+    {
+      "name": "Vue.js",
+      "logo": "/icons/vuejs/vuejs-original.svg"
+    },
+    {
+      "name": "React.js",
+      "logo": "/icons/react/react-original.svg"
+    },
+    {
+      "name": "GraphQL",
+      "logo": "/icons/graphql/graphql-original.svg"
+    },
+    {
+      "name": "Node.js",
+      "logo": "/icons/nodejs/nodejs-original.svg"
+    },
+    {
+      "name": "REST APIs",
+      "logo": null
+    },
+    {
+      "name": "Blade Templates",
+      "logo": null
+    },
+    {
+      "name": "HTML5",
+      "logo": "/icons/html5/html5-original.svg"
+    },
+    {
+      "name": "CSS3",
+      "logo": "/icons/css3/css3-original.svg"
+    },
+    {
+      "name": "Bootstrap",
+      "logo": "/icons/bootstrap/bootstrap-original.svg"
+    },
+    {
+      "name": "MySQL",
+      "logo": "/icons/mysql/mysql-original.svg"
+    },
+    {
+      "name": "PostgreSQL",
+      "logo": "/icons/postgresql/postgresql-original.svg"
+    },
+    {
+      "name": "Redis",
+      "logo": "/icons/redis/redis-original.svg"
+    },
+    {
+      "name": "Docker",
+      "logo": "/icons/docker/docker-original.svg"
+    },
+    {
+      "name": "Git",
+      "logo": "/icons/git/git-original.svg"
+    },
+    {
+      "name": "GitHub",
+      "logo": "/icons/github/github-original.svg"
+    },
+    {
+      "name": "Agile",
+      "logo": null
+    },
+    {
+      "name": "Scrum",
+      "logo": null
+    },
+    {
+      "name": "WebSockets",
+      "logo": null
+    }
+  ],
+  "projects": [
+    {
+      "name": "Enova Bids – Real-time Auction Platform",
+      "description": "• Built a real-time auction system with WebSockets delivering sub-100ms latency.\n• Scaled platform to handle thousands of concurrent bidders across multiple auctions.\n• Integrated Redis-based caching to optimize real-time bidding operations.\n• Designed React.js UI with live updates, notifications, and bidding dashboards.\n• Implemented secure authentication, payment integration, and audit trails.\n• Collaborated with distributed team following Agile/Scrum practices.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "nodejs",
+          "logo": "/icons/nodejs/nodejs-original.svg"
+        },
+        {
+          "name": "react",
+          "logo": "/icons/react/react-original.svg"
+        },
+        {
+          "name": "redis",
+          "logo": "/icons/redis/redis-original.svg"
+        },
+        {
+          "name": "WebSockets",
+          "logo": null
+        }
+      ],
+      "custom_links": []
+    },
+    {
+      "name": "E-vent – Event Management System",
+      "description": "• Designed and developed GraphQL APIs for event scheduling, sessions, and attendees.\n• Built Vue.js dashboards with interactive scheduling, live updates, and reporting tools.\n• Implemented role-based access control for organizers, sponsors, and participants.\n• Optimized backend queries and caching, reducing load times by 35%.\n• Integrated real-time notifications, ticket booking, and payments.\n• Increased system reliability and scalability for events with thousands of users.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "laravel",
+          "logo": "/icons/laravel/laravel-original.svg"
+        },
+        {
+          "name": "graphql",
+          "logo": "/icons/graphql/graphql-original.svg"
+        },
+        {
+          "name": "vuejs",
+          "logo": "/icons/vuejs/vuejs-original.svg"
+        },
+        {
+          "name": "mysql",
+          "logo": "/icons/mysql/mysql-original.svg"
+        }
+      ],
+      "custom_links": []
+    },
+    {
+      "name": "KwelaApp – Ticketing & Booking Platform",
+      "description": "• Developed complete ticketing and booking system with secure payment processing.\n• Built REST APIs enabling mobile app integration and third-party services.\n• Created organizer dashboards with detailed reporting and analytics.\n• Designed booking flow reducing checkout friction, increasing conversions by 25%.\n• Implemented refund, cancellation, and automated email notification workflows.\n• Enhanced security with token-based authentication and rate limiting.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "laravel",
+          "logo": "/icons/laravel/laravel-original.svg"
+        },
+        {
+          "name": "Blade",
+          "logo": null
+        },
+        {
+          "name": "mysql",
+          "logo": "/icons/mysql/mysql-original.svg"
+        },
+        {
+          "name": "REST APIs",
+          "logo": null
+        }
+      ],
+      "custom_links": []
+    },
+    {
+      "name": "Laugh Factory – Entertainment Platform",
+      "description": "• Maintained and extended a high-traffic entertainment platform serving millions monthly.\n• Migrated legacy modules, optimized backend performance and SEO rankings.\n• Built content management features for comedy shows, videos, and events.\n• Improved mobile responsiveness and front-end UX using jQuery and Bootstrap.\n• Automated content publishing workflows for editors and admins.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "CodeIgniter 3",
+          "logo": null
+        },
+        {
+          "name": "php",
+          "logo": "/icons/php/php-original.svg"
+        },
+        {
+          "name": "mysql",
+          "logo": "/icons/mysql/mysql-original.svg"
+        },
+        {
+          "name": "jquery",
+          "logo": "/icons/jquery/jquery-original.svg"
+        }
+      ],
+      "custom_links": []
+    },
+    {
+      "name": "Geo Nova Labs – Geo Data Platform",
+      "description": "• Developed backend infrastructure for large scientific geospatial datasets.\n• Designed REST APIs consumed by researchers and data visualization tools.\n• Implemented data security measures with role-based access and logging.\n• Optimized PostgreSQL queries and indexing for big-data performance.\n• Improved documentation, onboarding guides, and user adoption.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "laravel",
+          "logo": "/icons/laravel/laravel-original.svg"
+        },
+        {
+          "name": "Blade",
+          "logo": null
+        },
+        {
+          "name": "postgresql",
+          "logo": "/icons/postgresql/postgresql-original.svg"
+        },
+        {
+          "name": "REST APIs",
+          "logo": null
+        }
+      ],
+      "custom_links": []
+    },
+    {
+      "name": "Abstract.index.ae – Corporate Events",
+      "description": "• Built enterprise platform for managing international conferences and exhibitions.\n• Designed multi-user dashboards for sponsors, exhibitors, attendees, and organizers.\n• Automated event workflows including registration, scheduling, and ticketing.\n• Integrated Docker-based deployment for scalable hosting.\n• Supported 10k+ active participants across multiple events.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "laravel",
+          "logo": "/icons/laravel/laravel-original.svg"
+        },
+        {
+          "name": "mysql",
+          "logo": "/icons/mysql/mysql-original.svg"
+        }
+      ],
+      "custom_links": []
+    },
+    {
+      "name": "Market.index.ae – B2B Marketplace",
+      "description": "• Developed a secure B2B marketplace with vendor, buyer, and admin dashboards.\n• Designed GraphQL APIs for real-time product listings, bids, and orders.\n• Integrated payment gateways, invoice generation, and financial reports.\n• Optimized database queries to handle thousands of concurrent product views.",
+      "picUrl": null,
+      "technologies": [
+        {
+          "name": "laravel",
+          "logo": "/icons/laravel/laravel-original.svg"
+        },
+        {
+          "name": "mysql",
+          "logo": "/icons/mysql/mysql-original.svg"
+        },
+        {
+          "name": "graphql",
+          "logo": "/icons/graphql/graphql-original.svg"
+        }
+      ],
+      "custom_links": []
+    }
+  ],
+  "workExperience": [
+    {
+      "company": "Techlio Pvt Ltd",
+      "position": "Senior Software Engineer",
+      "location": "Onsite",
+      "start_date": "2025",
+      "end_date": "Present",
+      "description": "Developed enterprise-grade Laravel apps integrated with Vue.js.\nBuilt secure REST APIs supporting thousands of daily users.\nImplemented unit testing and CI/CD pipelines (reduced errors by 40%).\nCollaborated with Agile teams to deliver projects on time.",
+      "logoUrl": null,
+      "custom_links": []
+    },
+    {
+      "company": "INDEX Holding",
+      "position": "Web Developer",
+      "location": "Onsite",
+      "start_date": "2023",
+      "end_date": "2025",
+      "description": "• Developed enterprise-grade Laravel apps integrated with Vue.js.\n• Built secure REST APIs supporting thousands of daily users.\n• Implemented unit testing and CI/CD pipelines (reduced errors by 40%).\n• Collaborated with Agile teams to deliver projects on time.",
+      "logoUrl": null,
+      "custom_links": []
+    },
+    {
+      "company": "Technology Brainz",
+      "position": "Web Developer",
+      "location": "Onsite",
+      "start_date": "2019",
+      "end_date": "2023",
+      "description": "• Delivered full-stack solutions using Laravel, Vue.js, MySQL.\n• Mentored 4 junior developers, introduced coding standards.\n• Optimized queries/caching, cutting response time by 30%.\n• Built Vue.js UIs improving customer engagement.",
+      "logoUrl": null,
+      "custom_links": []
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSc Information Technology",
+      "university": "University of Sargodha",
+      "location": "Pakistan",
+      "start_year": "2015",
+      "end_year": "2019",
+      "description": null,
+      "logoUrl": null,
+      "custom_links": []
+    }
+  ]
+}
