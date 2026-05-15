@@ -27,12 +27,16 @@ export default function CustomSectionCardStatic({ section }: { section: StaticSe
   const sectionId = section.section_name.toLowerCase().replace(/\s+/g, '-')
   return (
     <section id={`custom-${sectionId}`} className="mb-28 animate-in fade-in slide-in-from-bottom duration-700">
-      <h2 className="text-3xl text-center font-bold text-primary mb-5">{section.section_name}</h2>
+      <h2 className="text-3xl sm:text-4xl text-center font-bold tracking-tight mb-8">
+        <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
+          {section.section_name}
+        </span>
+      </h2>
       <div className="space-y-6">
         {section.items.map((item, index) => (
           <Card
             key={index}
-            className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-in fade-in slide-in-from-bottom bg-card overflow-hidden"
+            className="animate-in fade-in slide-in-from-bottom overflow-hidden"
             style={{ animationDelay: `${index * 200}ms` }}
           >
             <CardHeader>

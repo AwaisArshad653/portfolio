@@ -21,9 +21,10 @@ interface StaticPersonalData {
 }
 export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
   return (
-    <header className="text-center mb-28">
+    <header className="text-center mb-24">
         {personal.avatarUrl && (
-          <Avatar className="size-32 mx-auto mb-6 !rounded-full">
+          <div className="mx-auto mb-8 w-fit rounded-full p-[2px] bg-gradient-to-br from-primary/40 via-primary/10 to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.06)]">
+            <Avatar className="size-32 !rounded-full ring-1 ring-border shadow-lg">
             <AvatarImage
               src={personal.avatarUrl}
               alt="Profile preview"
@@ -33,17 +34,22 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
               {personal.full_name?.charAt(0) || 'U'}
             </AvatarFallback>
           </Avatar>
+          </div>
         )}
-        <h1 className="text-4xl font-bold mb-2">{personal.full_name}</h1>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-3">
+          <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
+            {personal.full_name}
+          </span>
+        </h1>
         {personal.title && (
-          <p className="text-xl text-muted-foreground mb-4">{personal.title}</p>
+          <p className="text-lg sm:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">{personal.title}</p>
         )}
         {personal.location && (
           <p className="text-muted-foreground mb-4">{personal.location}</p>
         )}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           {personal.custom_links?.find(link => link.icon === 'email') && (
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="outline" size="sm" asChild className="hover:-translate-y-0.5 transition-transform">
               <a href={`mailto:${personal.custom_links.find(link => link.icon === 'email')?.url}`} aria-label="Email">
                 <Mail className="mr-2 h-4 w-4" />
                 Email
@@ -51,7 +57,7 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
             </Button>
           )}
           {personal.cvUrl && (
-            <Button variant="outline" size="sm" asChild>
+            <Button variant="outline" size="sm" asChild className="hover:-translate-y-0.5 transition-transform">
               <a href={personal.cvUrl} target="_blank" rel="noopener noreferrer" aria-label="Download CV">
                 <FileDown className="mr-2 w-4 h-4" />
                 Resume
@@ -61,7 +67,7 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
           {personal.custom_links && personal.custom_links.length > 0 && personal.custom_links
             .filter(link => link.icon !== 'email') // Exclude email since we handle it separately
             .map((link, index) => (
-              <Button key={index} variant="outline" size="sm" asChild>
+              <Button key={index} variant="outline" size="sm" asChild className="hover:-translate-y-0.5 transition-transform">
                 <a href={link.url} target="_blank" rel="noopener noreferrer" title={link.title}>
                   {renderIcon(link.icon, "mr-2")}
                   {link.title}
@@ -70,7 +76,7 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
             ))}
         </div>
         {personal.about_me && (
-          <MarkdownRenderer content={personal.about_me} className="text-center text-muted-foreground leading-relaxed" />
+          <MarkdownRenderer content={personal.about_me} className="text-center text-muted-foreground leading-relaxed max-w-3xl mx-auto" />
         )}
     </header>
   );
