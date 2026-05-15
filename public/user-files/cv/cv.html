@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awais Arshad — CV</title>
+  <style>
+    :root {
+      --bg: #0b0d12;
+      --panel: rgba(255,255,255,0.06);
+      --panel-solid: #111521;
+      --text: #e8eaf0;
+      --muted: rgba(232,234,240,0.72);
+      --border: rgba(255,255,255,0.10);
+      --accent: #7c3aed;
+      --accent2: #22c55e;
+      --chip: rgba(124,58,237,0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(900px 500px at 50% -10%, rgba(124,58,237,0.30), transparent 60%),
+                  radial-gradient(600px 420px at 0% 100%, rgba(34,197,94,0.16), transparent 60%),
+                  radial-gradient(650px 420px at 100% 100%, rgba(124,58,237,0.14), transparent 60%),
+                  var(--bg);
+      line-height: 1.45;
+    }
+
+    a { color: var(--text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 18px 72px;
+    }
+
+    .topbar {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btn:hover { background: rgba(255,255,255,0.10); }
+
+    header {
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 18px 60px rgba(0,0,0,0.35);
+      overflow: hidden;
+      position: relative;
+    }
+
+    header:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(520px 220px at 10% 0%, rgba(124,58,237,0.30), transparent 55%),
+                  radial-gradient(520px 220px at 90% 0%, rgba(34,197,94,0.16), transparent 55%);
+      pointer-events: none;
+    }
+
+    .headerGrid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 16px;
+      position: relative;
+    }
+
+    .name {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 6px;
+    }
+
+    .title {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 10px;
+      font-weight: 600;
+    }
+
+    .summary {
+      color: var(--muted);
+      margin: 0;
+      max-width: 62ch;
+    }
+
+    .contact {
+      display: grid;
+      gap: 8px;
+      justify-content: end;
+      align-content: start;
+    }
+
+    .contact a {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: block;
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    .contact a span {
+      color: var(--muted);
+      display: block;
+      font-size: 12px;
+      margin-top: 2px;
+      word-break: break-word;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 14px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(232,234,240,0.85);
+    }
+
+    .item {
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+    .item:first-of-type { border-top: 0; padding-top: 0; }
+
+    .itemTitle {
+      font-size: 15px;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .itemMeta {
+      color: var(--muted);
+      font-size: 12.5px;
+      margin: 4px 0 0;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    li { margin: 6px 0; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      border: 1px solid rgba(124,58,237,0.25);
+      background: var(--chip);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: rgba(232,234,240,0.92);
+    }
+
+    .small {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 860px) {
+      .headerGrid { grid-template-columns: 1fr; }
+      .contact { justify-content: start; grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      :root {
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --text: #111827;
+        --muted: #374151;
+        --border: #e5e7eb;
+        --chip: #f3f4f6;
+      }
+      body {
+        background: #ffffff;
+        color: var(--text);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .wrap { padding: 0; }
+      header, .card { box-shadow: none; background: #ffffff; }
+      header:before { display: none; }
+      .btn { display: none; }
+      a { color: #111827; text-decoration: none; }
+      .chip { border-color: #e5e7eb; color: #111827; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="small">Tip: Use your browser’s Print dialog to save as PDF.</div>
+      <button class="btn" onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <header>
+      <div class="headerGrid">
+        <div>
+          <h1 class="name">Awais Arshad</h1>
+          <p class="title">Senior PHP/Laravel Developer — Lahore, Pakistan</p>
+          <p class="summary">
+            Senior PHP/Laravel Developer with 6+ years of experience delivering scalable web applications. Skilled in Laravel, Vue.js, GraphQL, and Node.js with strong expertise in REST APIs, real-time applications, and database optimization. Proven track record of building enterprise-grade solutions, mentoring junior developers, and thriving in remote Agile teams.
+          </p>
+        </div>
+        <div class="contact">
+          <a href="mailto:m.awaisarshad653@gmail.com">
+            Email
+            <span>m.awaisarshad653@gmail.com</span>
+          </a>
+          <a href="https://github.com/AwaisArshad653" target="_blank" rel="noreferrer">
+            GitHub
+            <span>github.com/AwaisArshad653</span>
+          </a>
+          <a href="https://linkedin.com/in/awais-arshad-41a00518a" target="_blank" rel="noreferrer">
+            LinkedIn
+            <span>linkedin.com/in/awais-arshad-41a00518a</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Experience</h2>
+
+        <div class="item">
+          <p class="itemTitle">Techlio Pvt Ltd — Senior Software Engineer</p>
+          <p class="itemMeta">2025 – Present · Onsite</p>
+          <ul>
+            <li>Developed enterprise-grade Laravel apps integrated with Vue.js.</li>
+            <li>Built secure REST APIs supporting thousands of daily users.</li>
+            <li>Implemented unit testing and CI/CD pipelines (reduced errors by 40%).</li>
+            <li>Collaborated with Agile teams to deliver projects on time.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <p class="itemTitle">INDEX Holding — Web Developer</p>
+          <p class="itemMeta">2023 – 2025 · Onsite</p>
+          <ul>
+            <li>Developed enterprise-grade Laravel apps integrated with Vue.js.</li>
+            <li>Built secure REST APIs supporting thousands of daily users.</li>
+            <li>Implemented unit testing and CI/CD pipelines (reduced errors by 40%).</li>
+            <li>Collaborated with Agile teams to deliver projects on time.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <p class="itemTitle">Technology Brainz — Web Developer</p>
+          <p class="itemMeta">2019 – 2023 · Onsite</p>
+          <ul>
+            <li>Delivered full-stack solutions using Laravel, Vue.js, and MySQL.</li>
+            <li>Mentored 4 junior developers and introduced coding standards.</li>
+            <li>Optimized queries/caching, cutting response time by 30%.</li>
+            <li>Built Vue.js UIs improving customer engagement.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Core Skills</h2>
+        <div class="chips">
+          <span class="chip">Laravel</span>
+          <span class="chip">PHP</span>
+          <span class="chip">Vue.js</span>
+          <span class="chip">GraphQL</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">Redis</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Git</span>
+          <span class="chip">Agile / Scrum</span>
+          <span class="chip">WebSockets</span>
+        </div>
+
+        <div style="height: 14px"></div>
+
+        <h2>Education</h2>
+        <div class="item" style="padding-bottom: 0">
+          <p class="itemTitle">University of Sargodha</p>
+          <p class="itemMeta">BSc Information Technology · 2015 – 2019 · Pakistan</p>
+        </div>
+      </aside>
+
+      <section class="card" style="grid-column: 1 / -1">
+        <h2>Selected Projects</h2>
+
+        <div class="item">
+          <p class="itemTitle">Enova Bids — Real-time Auction Platform</p>
+          <ul>
+            <li>Built a real-time auction system with WebSockets delivering sub-100ms latency.</li>
+            <li>Scaled platform to handle thousands of concurrent bidders across multiple auctions.</li>
+            <li>Integrated Redis-based caching to optimize real-time bidding operations.</li>
+            <li>Designed React.js UI with live updates, notifications, and bidding dashboards.</li>
+            <li>Implemented secure authentication, payment integration, and audit trails.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <p class="itemTitle">E-vent — Event Management System</p>
+          <ul>
+            <li>Designed and developed GraphQL APIs for event scheduling, sessions, and attendees.</li>
+            <li>Built Vue.js dashboards with interactive scheduling, live updates, and reporting tools.</li>
+            <li>Implemented role-based access control for organizers, sponsors, and participants.</li>
+            <li>Optimized backend queries and caching, reducing load times by 35%.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <p class="itemTitle">KwelaApp — Ticketing & Booking Platform</p>
+          <ul>
+            <li>Developed complete ticketing and booking system with secure payment processing.</li>
+            <li>Built REST APIs enabling mobile app integration and third-party services.</li>
+            <li>Designed booking flow reducing checkout friction, increasing conversions by 25%.</li>
+            <li>Implemented refund, cancellation, and automated email notification workflows.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <p class="itemTitle">Market.index.ae — B2B Marketplace</p>
+          <ul>
+            <li>Developed a secure B2B marketplace with vendor, buyer, and admin dashboards.</li>
+            <li>Designed GraphQL APIs for real-time product listings, bids, and orders.</li>
+            <li>Integrated payment gateways, invoice generation, and financial reports.</li>
+            <li>Optimized database queries to handle thousands of concurrent product views.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
