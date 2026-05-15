@@ -2,6 +2,7 @@
 import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 import { useEffect, useState } from "react"
 import Image from 'next/image';
+import { withBasePath } from "@/lib/utils";
 interface StaticSkillsData {
   skills: Array<{
     name: string
@@ -113,7 +114,7 @@ export default function OrbitingCirclesStatic({ skills }: StaticSkillsData) {
               >
                 {skill.logo && (
                   <Image
-                    src={skill.logo}
+                    src={withBasePath(skill.logo)}
                     alt={skill.name}
                     width={32}
                     height={32}
@@ -144,12 +145,12 @@ export default function OrbitingCirclesStatic({ skills }: StaticSkillsData) {
                     reverse={circle.reverse}
                     speed={1}
                   >
-                    {circle.techs.map((skill, techIndex) => (
-                      <div key={`circle-${circleIndex}-tech-${techIndex}`} className="flex items-center justify-center">
-                        {skill.logo && (
+                    {circle.techs.map((tech, techIndex) => (
+                      <div key={`desktop-${circleIndex}-${techIndex}`} className="flex items-center justify-center">
+                        {tech.logo && (
                           <Image
-                            src={skill.logo}
-                            alt={skill.name}
+                            src={withBasePath(tech.logo)}
+                            alt={tech.name}
                             width={typeof circle.iconSize === 'object' ? circle.iconSize.desktop : circle.iconSize}
                             height={typeof circle.iconSize === 'object' ? circle.iconSize.desktop : circle.iconSize}
                             className="object-contain"

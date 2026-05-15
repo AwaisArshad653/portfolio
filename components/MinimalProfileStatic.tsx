@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail, FileDown } from "lucide-react";
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
+import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
 interface StaticPersonalData {
   personal: {
@@ -26,7 +27,7 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
           <div className="mx-auto mb-8 w-fit rounded-full p-[2px] bg-gradient-to-br from-primary/40 via-primary/10 to-transparent shadow-[0_0_0_1px_rgba(0,0,0,0.06)]">
             <Avatar className="size-32 !rounded-full ring-1 ring-border shadow-lg">
             <AvatarImage
-              src={personal.avatarUrl}
+              src={withBasePath(personal.avatarUrl)}
               alt="Profile preview"
               className="!rounded-full"
             />
@@ -58,7 +59,7 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
           )}
           {personal.cvUrl && (
             <Button variant="outline" size="sm" asChild className="hover:-translate-y-0.5 transition-transform">
-              <a href={personal.cvUrl} target="_blank" rel="noopener noreferrer" aria-label="Download CV">
+              <a href={withBasePath(personal.cvUrl)} target="_blank" rel="noopener noreferrer" aria-label="Download CV">
                 <FileDown className="mr-2 w-4 h-4" />
                 Resume
               </a>
