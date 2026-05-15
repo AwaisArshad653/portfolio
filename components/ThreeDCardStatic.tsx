@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
 import Image from 'next/image';
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
+import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
 interface StaticProjectsData {
   projects: Array<{
@@ -51,7 +52,7 @@ export default function ThreeDCardStatic({ projects }: StaticProjectsData) {
                     <CardItem translateZ="100" className="w-full mt-4">
                       <div className="relative aspect-video w-full overflow-hidden rounded-xl">
                         <Image
-                          src={project.picUrl}
+                          src={withBasePath(project.picUrl)}
                           alt={project.name || 'Project image'}
                           fill
                           className="object-cover group-hover/card:shadow-xl"
@@ -70,7 +71,7 @@ export default function ThreeDCardStatic({ projects }: StaticProjectsData) {
                         <div key={techIndex} className="flex items-center gap-1">
                           {tech.logo && (
                             <Image
-                              src={tech.logo}
+                              src={withBasePath(tech.logo)}
                               alt={tech.name}
                               width={16}
                               height={16}

@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
+import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
 interface StaticSectionData {
   section_name: string
@@ -46,7 +47,7 @@ function ListItem({ primaryTitle, secondaryTitle, dateInfo, location, descriptio
           <div className="flex-shrink-0">
             <div className="relative w-12 h-12 flex items-center justify-center">
                 <Image
-                  src={logoUrl}
+                  src={withBasePath(logoUrl)}
                   alt="Logo"
                   fill
                   className="object-contain"
@@ -101,7 +102,11 @@ export default function CustomSectionListStatic({ section }: { section: StaticSe
   const sectionId = section.section_name.toLowerCase().replace(/\s+/g, '-')
   return (
     <section id={`custom-${sectionId}`} className="mb-28 animate-in fade-in slide-in-from-bottom duration-700">
-      <h2 className="text-3xl text-center font-bold text-primary mb-5">{section.section_name}</h2>
+      <h2 className="text-3xl sm:text-4xl text-center font-bold tracking-tight mb-8">
+        <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
+          {section.section_name}
+        </span>
+      </h2>
       <ul className="divide-y divide-border">
         {section.items.map((item, index) => (
           <ListItem

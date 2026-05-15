@@ -5,6 +5,7 @@ import { CardContent } from '@/components/ui/card';
 import { Briefcase, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
+import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
 interface StaticSectionData {
   section_name: string
@@ -45,7 +46,7 @@ function TimelineItem({ primaryTitle, secondaryTitle, dateInfo, location, descri
           {logoUrl ? (
             <div className="relative size-10">
               <Image
-                src={logoUrl}
+                src={withBasePath(logoUrl)}
                 alt="Logo"
                 fill
                 className="object-contain"
@@ -100,7 +101,11 @@ export default function CustomSectionTimelineStatic({ section }: { section: Stat
   const sectionId = section.section_name.toLowerCase().replace(/\s+/g, '-')
   return (
     <section id={`custom-${sectionId}`} className="mb-28">
-      <h2 className="text-3xl text-center font-bold text-primary mb-5">{section.section_name}</h2>
+      <h2 className="text-3xl sm:text-4xl text-center font-bold tracking-tight mb-8">
+        <span className="bg-gradient-to-b from-foreground to-foreground/70 bg-clip-text text-transparent">
+          {section.section_name}
+        </span>
+      </h2>
       <CardContent className="p-0">
         <ul className="ml-10 border-l">
           {section.items.map((item, index) => (

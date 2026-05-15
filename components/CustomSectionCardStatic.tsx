@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { CalendarDays, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
+import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
 interface StaticSectionData {
   section_name: string
@@ -45,7 +46,7 @@ export default function CustomSectionCardStatic({ section }: { section: StaticSe
                   {item.logoUrl && (
                     <div className="relative w-12 h-12 flex items-center justify-center flex-shrink-0">
                         <Image
-                          src={item.logoUrl}
+                          src={withBasePath(item.logoUrl)}
                           alt="Logo"
                           fill
                           className="object-contain"
