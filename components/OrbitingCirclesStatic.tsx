@@ -3,6 +3,7 @@ import { OrbitingCircles } from "@/components/ui/orbiting-circles"
 import { useEffect, useState } from "react"
 import Image from 'next/image';
 import { withBasePath } from "@/lib/utils";
+import { SectionEyebrow } from './SectionEyebrow';
 interface StaticSkillsData {
   skills: Array<{
     name: string
@@ -99,9 +100,12 @@ export default function OrbitingCirclesStatic({ skills }: StaticSkillsData) {
   const skillsWithoutLogos = skills.filter(skill => skill.logo === null);
   const { orbitingTechs, remainingTechs, circleConfig, hasRemainingTechs } = useOrbitingCircles(skillsWithLogos);
   return (
-    <section id="skills" className="mb-28">
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-primary mb-5">Technical Skills</h2>
+    <section id="skills" className="mb-28 scroll-mt-24">
+      <div className="mb-8">
+        <SectionEyebrow method="GET" path="/skills" />
+        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
+          Technical Skills <span className="font-mono text-lg text-muted-foreground">Array({skills.length})</span>
+        </h2>
       </div>
       {}
       {isMobile && skillsWithLogos.length > 0 && (
@@ -197,12 +201,12 @@ export default function OrbitingCirclesStatic({ skills }: StaticSkillsData) {
       {}
       {skillsWithoutLogos.length > 0 && (
         <div className="mt-8">
-          <h3 className="text-lg font-semibold text-center mb-4">Other Skills</h3>
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+          <h3 className="font-display text-lg font-semibold text-center mb-4">Other Skills</h3>
+          <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
             {skillsWithoutLogos.map((skill, index) => (
               <div
                 key={`other-${index}`}
-                className="px-3 py-1 bg-muted rounded-full text-sm font-medium text-muted-foreground hover:bg-muted/80 transition-colors"
+                className="px-3 py-1 rounded-full border border-border font-mono text-xs text-muted-foreground hover:border-primary/60 hover:text-primary transition-colors"
               >
                 {skill.name}
               </div>

@@ -1,12 +1,12 @@
 "use client";
 import React from 'react';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
 import Image from 'next/image';
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
 import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
+import { SectionEyebrow } from './SectionEyebrow';
 interface StaticProjectsData {
   projects: Array<{
     name: string | null
@@ -25,17 +25,18 @@ interface StaticProjectsData {
 }
 export default function ThreeDCardStatic({ projects }: StaticProjectsData) {
   return (
-    <section className="mb-28">
+    <section id="projects" className="mb-28 scroll-mt-24">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl text-center font-bold text-primary mb-5">Projects</h2>
+        <SectionEyebrow method="GET" path="/projects" note={`${projects.length} results`} />
+        <h2 className="font-display text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-8">Projects</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project, index) => {
             return (
               <CardContainer key={index} className="inter-var" containerClassName="flex items-start justify-center">
-                <CardBody className="relative group/card bg-card hover:shadow-2xl border-border w-full max-w-md h-auto rounded-xl p-6 border flex flex-col">
+                <CardBody className="relative group/card bg-card/70 backdrop-blur hover:shadow-2xl hover:shadow-primary/5 border-border hover:border-primary/40 w-full max-w-md h-auto rounded-xl p-6 border flex flex-col transition-colors">
                   <CardItem
                     translateZ="50"
-                    className="text-xl font-bold text-card-foreground break-words"
+                    className="font-display text-xl font-bold text-card-foreground break-words"
                   >
                     {project.name}
                   </CardItem>
@@ -79,11 +80,11 @@ export default function ThreeDCardStatic({ projects }: StaticProjectsData) {
                               unoptimized
                             />
                           )}
-                          <span className="text-xs text-muted-foreground break-all">{tech.name}</span>
+                          <span className="font-mono text-[11px] text-muted-foreground break-all">{tech.name}</span>
                         </div>
                       ))}
                       {project.technologies.length > 5 && (
-                        <Badge variant="outline" className="text-xs">
+                        <Badge variant="outline" className="text-xs font-mono">
                           +{project.technologies.length - 5} more
                         </Badge>
                       )}
@@ -93,12 +94,17 @@ export default function ThreeDCardStatic({ projects }: StaticProjectsData) {
                     <CardItem translateZ={20} className="mt-auto pt-4">
                       <div className="flex flex-wrap gap-2">
                         {project.custom_links.map((link, linkIndex) => (
-                          <Button key={linkIndex} variant="outline" size="sm" asChild>
-                            <a href={link.url} target="_blank" rel="noopener noreferrer" title={link.title} className="break-all">
-                              {renderIcon(link.icon, "mr-2")}
-                              {link.title}
-                            </a>
-                          </Button>
+                          <a
+                            key={linkIndex}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            title={link.title}
+                            className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-1.5 font-mono text-xs text-muted-foreground hover:text-primary hover:border-primary/60 transition-colors break-all"
+                          >
+                            {renderIcon(link.icon)}
+                            {link.title}
+                          </a>
                         ))}
                       </div>
                     </CardItem>
