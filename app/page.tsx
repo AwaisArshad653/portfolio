@@ -15,9 +15,9 @@ const NAV = [
 
 export default function Portfolio() {
   return (
-    <main className="min-h-screen bg-background relative overflow-hidden">
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,black,transparent)] opacity-[0.4]" />
-      <div aria-hidden className="pointer-events-none absolute inset-0">
+    <main className="min-h-screen bg-background relative">
+      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_80%_60%_at_50%_0%,black,transparent)] opacity-[0.4]" />
         <div className="absolute -top-32 left-1/2 h-[520px] w-[820px] -translate-x-1/2 rounded-full bg-gradient-to-r from-primary/10 via-transparent to-mint/10 blur-3xl" />
         <div className="absolute -bottom-40 -left-40 h-[520px] w-[520px] rounded-full bg-gradient-to-tr from-primary/10 via-transparent to-transparent blur-3xl" />
         <div className="absolute -bottom-40 -right-40 h-[520px] w-[520px] rounded-full bg-gradient-to-tl from-amber/10 via-transparent to-transparent blur-3xl" />
