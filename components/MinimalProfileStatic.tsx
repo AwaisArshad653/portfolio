@@ -1,9 +1,9 @@
 "use client";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail, FileDown } from "lucide-react";
 import { renderIcon } from "@/lib/hybrid-icon-resolver";
 import { withBasePath } from "@/lib/utils";
 import { MarkdownRenderer } from './MarkdownRenderer';
+import HeroFieldStatic from './HeroFieldStatic';
 
 interface StaticPersonalData {
   personal: {
@@ -21,12 +21,38 @@ interface StaticPersonalData {
   }
 }
 
+function getInitials(name: string | null) {
+  if (!name) return '?';
+  const parts = name.trim().split(/\s+/);
+  const first = parts[0]?.[0] ?? '';
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : '';
+  return (first + last).toUpperCase();
+}
+
+function InitialsAvatar({ name }: { name: string | null }) {
+  return (
+    <div
+      className="relative mx-auto sm:mx-0 size-24 sm:size-28 rounded-2xl shrink-0 flex items-center justify-center overflow-hidden ring-1 ring-border shadow-lg bg-gradient-to-br from-primary via-primary/80 to-mint"
+      role="img"
+      aria-label={`${name ?? 'Profile'} avatar`}
+    >
+      <div aria-hidden className="absolute inset-0 bg-grid opacity-20" />
+      <span className="relative font-display text-3xl sm:text-4xl font-bold text-primary-foreground tracking-tight">
+        {getInitials(name)}
+      </span>
+      <span aria-hidden className="absolute top-1.5 left-1.5 h-2 w-2 border-t border-l border-primary-foreground/50" />
+      <span aria-hidden className="absolute bottom-1.5 right-1.5 h-2 w-2 border-b border-r border-primary-foreground/50" />
+    </div>
+  );
+}
+
 export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
   return (
     <header className="mb-24">
-      <div className="rounded-xl border border-border bg-card/70 backdrop-blur overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.2)]">
+      <div className="rounded-xl border border-border bg-card/70 backdrop-blur overflow-hidden shadow-[0_0_0_1px_rgba(0,0,0,0.2)] relative">
+        <HeroFieldStatic />
         {/* Terminal chrome */}
-        <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background/40">
+        <div className="relative flex items-center gap-2 px-4 py-3 border-b border-border bg-background/40">
           <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-amber/70" />
           <span className="h-2.5 w-2.5 rounded-full bg-mint/70" />
@@ -38,22 +64,9 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
           </span>
         </div>
 
-        <div className="p-6 sm:p-10">
+        <div className="relative p-6 sm:p-10">
           <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-8">
-            {personal.avatarUrl && (
-              <div className="mx-auto sm:mx-0 w-fit rounded-full p-[2px] bg-gradient-to-br from-primary via-mint/40 to-transparent shrink-0">
-                <Avatar className="size-24 sm:size-28 !rounded-full ring-1 ring-border shadow-lg">
-                  <AvatarImage
-                    src={withBasePath(personal.avatarUrl)}
-                    alt="Profile preview"
-                    className="!rounded-full"
-                  />
-                  <AvatarFallback className="!rounded-full">
-                    {personal.full_name?.charAt(0) || 'U'}
-                  </AvatarFallback>
-                </Avatar>
-              </div>
-            )}
+            <InitialsAvatar name={personal.full_name} />
             <div className="text-center sm:text-left">
               {personal.title && (
                 <p className="font-mono text-xs sm:text-sm uppercase tracking-widest text-primary mb-2">

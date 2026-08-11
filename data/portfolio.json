@@ -151,30 +151,6 @@
   ],
   "projects": [
     {
-      "name": "Enova Bids – Real-time Auction Platform",
-      "description": "• Built a real-time auction system with WebSockets delivering sub-100ms latency.\n• Scaled platform to handle thousands of concurrent bidders across multiple auctions.\n• Integrated Redis-based caching to optimize real-time bidding operations.\n• Designed React.js UI with live updates, notifications, and bidding dashboards.\n• Implemented secure authentication, payment integration, and audit trails.\n• Collaborated with distributed team following Agile/Scrum practices.",
-      "picUrl": null,
-      "technologies": [
-        {
-          "name": "nodejs",
-          "logo": "/icons/nodejs/nodejs-original.svg"
-        },
-        {
-          "name": "react",
-          "logo": "/icons/react/react-original.svg"
-        },
-        {
-          "name": "redis",
-          "logo": "/icons/redis/redis-original.svg"
-        },
-        {
-          "name": "WebSockets",
-          "logo": null
-        }
-      ],
-      "custom_links": []
-    },
-    {
       "name": "E-vent – Event Management System",
       "description": "• Designed and developed GraphQL APIs for event scheduling, sessions, and attendees.\n• Built Vue.js dashboards with interactive scheduling, live updates, and reporting tools.\n• Implemented role-based access control for organizers, sponsors, and participants.\n• Optimized backend queries and caching, reducing load times by 35%.\n• Integrated real-time notifications, ticket booking, and payments.\n• Increased system reliability and scalability for events with thousands of users.",
       "picUrl": null,
@@ -196,7 +172,13 @@
           "logo": "/icons/mysql/mysql-original.svg"
         }
       ],
-      "custom_links": []
+      "custom_links": [
+        {
+          "icon": "website",
+          "title": "Live Site",
+          "url": "https://e-vent.index.ae/"
+        }
+      ]
     },
     {
       "name": "KwelaApp – Ticketing & Booking Platform",
@@ -220,7 +202,13 @@
           "logo": null
         }
       ],
-      "custom_links": []
+      "custom_links": [
+        {
+          "icon": "website",
+          "title": "Live Site",
+          "url": "https://kwelamall.com/"
+        }
+      ]
     },
     {
       "name": "Laugh Factory – Entertainment Platform",
@@ -244,7 +232,13 @@
           "logo": "/icons/jquery/jquery-original.svg"
         }
       ],
-      "custom_links": []
+      "custom_links": [
+        {
+          "icon": "website",
+          "title": "Live Site",
+          "url": "https://www.laughfactory.com/"
+        }
+      ]
     },
     {
       "name": "Geo Nova Labs – Geo Data Platform",
@@ -268,7 +262,13 @@
           "logo": null
         }
       ],
-      "custom_links": []
+      "custom_links": [
+        {
+          "icon": "website",
+          "title": "Live Site",
+          "url": "https://geonovalabs.com/"
+        }
+      ]
     },
     {
       "name": "Abstract.index.ae – Corporate Events",
@@ -284,7 +284,13 @@
           "logo": "/icons/mysql/mysql-original.svg"
         }
       ],
-      "custom_links": []
+      "custom_links": [
+        {
+          "icon": "website",
+          "title": "Live Site",
+          "url": "https://abstracts.index.ae/login"
+        }
+      ]
     },
     {
       "name": "Market.index.ae – B2B Marketplace",
@@ -304,7 +310,13 @@
           "logo": "/icons/graphql/graphql-original.svg"
         }
       ],
-      "custom_links": []
+      "custom_links": [
+        {
+          "icon": "website",
+          "title": "Live Site",
+          "url": "https://market.index.ae/industry_news"
+        }
+      ]
     }
   ],
   "workExperience": [

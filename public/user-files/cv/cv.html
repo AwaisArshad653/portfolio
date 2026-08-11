@@ -6,15 +6,17 @@
   <title>Awais Arshad — CV</title>
   <style>
     :root {
-      --bg: #0b0d12;
-      --panel: rgba(255,255,255,0.06);
-      --panel-solid: #111521;
-      --text: #e8eaf0;
-      --muted: rgba(232,234,240,0.72);
+      --bg: #0a0f1c;
+      --panel: rgba(255,255,255,0.05);
+      --panel-solid: #121b2e;
+      --text: #eaf0fb;
+      --muted: rgba(234,240,251,0.68);
       --border: rgba(255,255,255,0.10);
-      --accent: #7c3aed;
-      --accent2: #22c55e;
-      --chip: rgba(124,58,237,0.12);
+      --signal: #5b8def;
+      --mint: #34d399;
+      --amber: #f5a623;
+      --chip: rgba(91,141,239,0.12);
+      --mono: ui-monospace, "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
     }
 
     * { box-sizing: border-box; }
@@ -23,9 +25,9 @@
       margin: 0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
       color: var(--text);
-      background: radial-gradient(900px 500px at 50% -10%, rgba(124,58,237,0.30), transparent 60%),
-                  radial-gradient(600px 420px at 0% 100%, rgba(34,197,94,0.16), transparent 60%),
-                  radial-gradient(650px 420px at 100% 100%, rgba(124,58,237,0.14), transparent 60%),
+      background: radial-gradient(900px 500px at 50% -10%, rgba(91,141,239,0.22), transparent 60%),
+                  radial-gradient(600px 420px at 0% 100%, rgba(52,211,153,0.14), transparent 60%),
+                  radial-gradient(650px 420px at 100% 100%, rgba(245,166,35,0.10), transparent 60%),
                   var(--bg);
       line-height: 1.45;
     }
@@ -45,6 +47,7 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 16px;
+      font-family: var(--mono);
     }
 
     .btn {
@@ -52,17 +55,18 @@
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.06);
       color: var(--text);
-      border-radius: 10px;
+      border-radius: 8px;
       padding: 10px 12px;
-      font-size: 13px;
+      font-size: 12.5px;
+      font-family: var(--mono);
       cursor: pointer;
     }
-    .btn:hover { background: rgba(255,255,255,0.10); }
+    .btn:hover { background: rgba(255,255,255,0.10); border-color: rgba(91,141,239,0.5); }
 
     header {
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      border-radius: 14px;
       padding: 22px;
       box-shadow: 0 18px 60px rgba(0,0,0,0.35);
       overflow: hidden;
@@ -73,8 +77,8 @@
       content: "";
       position: absolute;
       inset: -1px;
-      background: radial-gradient(520px 220px at 10% 0%, rgba(124,58,237,0.30), transparent 55%),
-                  radial-gradient(520px 220px at 90% 0%, rgba(34,197,94,0.16), transparent 55%);
+      background: radial-gradient(520px 220px at 10% 0%, rgba(91,141,239,0.24), transparent 55%),
+                  radial-gradient(520px 220px at 90% 0%, rgba(52,211,153,0.14), transparent 55%);
       pointer-events: none;
     }
 
@@ -83,6 +87,15 @@
       grid-template-columns: 1.3fr 1fr;
       gap: 16px;
       position: relative;
+    }
+
+    .eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin: 0 0 8px;
     }
 
     .name {
@@ -115,7 +128,7 @@
     .contact a {
       border: 1px solid var(--border);
       background: rgba(255,255,255,0.04);
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 10px 12px;
       display: block;
       font-size: 13px;
@@ -128,6 +141,7 @@
       font-size: 12px;
       margin-top: 2px;
       word-break: break-word;
+      font-family: var(--mono);
     }
 
     .grid {
@@ -139,17 +153,18 @@
 
     .card {
       border: 1px solid var(--border);
-      background: rgba(255,255,255,0.04);
-      border-radius: 16px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 14px;
       padding: 18px;
     }
 
     h2 {
       margin: 0 0 12px;
-      font-size: 14px;
+      font-size: 12.5px;
+      font-family: var(--mono);
       letter-spacing: 0.10em;
       text-transform: uppercase;
-      color: rgba(232,234,240,0.85);
+      color: rgba(234,240,251,0.85);
     }
 
     .item {
@@ -164,9 +179,19 @@
       margin: 0;
     }
 
+    .itemRole {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--signal);
+      margin: 3px 0 0;
+    }
+
     .itemMeta {
       color: var(--muted);
-      font-size: 12.5px;
+      font-size: 12px;
+      font-family: var(--mono);
       margin: 4px 0 0;
     }
 
@@ -184,17 +209,25 @@
     }
 
     .chip {
-      border: 1px solid rgba(124,58,237,0.25);
+      border: 1px solid rgba(91,141,239,0.25);
       background: var(--chip);
       padding: 7px 10px;
       border-radius: 999px;
-      font-size: 12px;
-      color: rgba(232,234,240,0.92);
+      font-size: 11.5px;
+      font-family: var(--mono);
+      color: rgba(234,240,251,0.92);
+    }
+
+    .chip.ai {
+      border-color: rgba(52,211,153,0.35);
+      background: rgba(52,211,153,0.10);
+      color: #b8f5d8;
     }
 
     .small {
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--muted);
+      font-family: var(--mono);
     }
 
     @media (max-width: 860px) {
@@ -224,23 +257,25 @@
       .btn { display: none; }
       a { color: #111827; text-decoration: none; }
       .chip { border-color: #e5e7eb; color: #111827; }
+      .chip.ai { border-color: #e5e7eb; color: #111827; background: #f3f4f6; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="topbar">
-      <div class="small">Tip: Use your browser’s Print dialog to save as PDF.</div>
+      <div class="small">// Print dialog → Save as PDF</div>
       <button class="btn" onclick="window.print()">Print / Save as PDF</button>
     </div>
 
     <header>
       <div class="headerGrid">
         <div>
+          <p class="eyebrow">GET /awais-arshad · 200</p>
           <h1 class="name">Awais Arshad</h1>
           <p class="title">Senior PHP/Laravel Developer — Lahore, Pakistan</p>
           <p class="summary">
-            Senior PHP/Laravel Developer with 6+ years of experience delivering scalable web applications. Skilled in Laravel, Vue.js, GraphQL, and Node.js with strong expertise in REST APIs, real-time applications, and database optimization. Proven track record of building enterprise-grade solutions, mentoring junior developers, and thriving in remote Agile teams.
+            Senior PHP/Laravel Developer with 6+ years of experience delivering scalable web applications. Skilled in Laravel, Vue.js, GraphQL, and Node.js with strong expertise in REST APIs, real-time applications, and database optimization. Proven track record of building enterprise-grade solutions, mentoring junior developers, and thriving in remote Agile teams. Experienced in using AI-assisted development tools (Claude Code, Cursor, ChatGPT/Claude) to speed up delivery, automate repetitive engineering tasks, and streamline design-to-code workflows.
           </p>
         </div>
         <div class="contact">
@@ -262,44 +297,53 @@
 
     <div class="grid">
       <section class="card">
-        <h2>Experience</h2>
+        <h2>GET /experience</h2>
 
         <div class="item">
-          <p class="itemTitle">Techlio Pvt Ltd — Senior Software Engineer</p>
-          <p class="itemMeta">2025 – Present · Onsite</p>
+          <p class="itemTitle">Techlio Pvt Ltd</p>
+          <p class="itemRole">Senior Software Engineer</p>
+          <p class="itemMeta">Oct 2025 – Present · Onsite</p>
           <ul>
             <li>Developed enterprise-grade Laravel apps integrated with Vue.js.</li>
             <li>Built secure REST APIs supporting thousands of daily users.</li>
             <li>Implemented unit testing and CI/CD pipelines (reduced errors by 40%).</li>
             <li>Collaborated with Agile teams to deliver projects on time.</li>
+            <li>Use Claude Code and Cursor for agentic coding, speeding up feature development and cutting manual boilerplate work.</li>
+            <li>Apply AI-assisted debugging and test generation to catch edge cases earlier and raise code coverage.</li>
+            <li>Automate recurring development tasks (CI/CD scripts, documentation) with AI tools to streamline team workflows.</li>
           </ul>
         </div>
 
         <div class="item">
-          <p class="itemTitle">INDEX Holding — Web Developer</p>
-          <p class="itemMeta">2023 – 2025 · Onsite</p>
+          <p class="itemTitle">INDEX Holding</p>
+          <p class="itemRole">Web Developer</p>
+          <p class="itemMeta">2023 – Oct 2025 · Onsite</p>
           <ul>
             <li>Developed enterprise-grade Laravel apps integrated with Vue.js.</li>
             <li>Built secure REST APIs supporting thousands of daily users.</li>
             <li>Implemented unit testing and CI/CD pipelines (reduced errors by 40%).</li>
             <li>Collaborated with Agile teams to deliver projects on time.</li>
+            <li>Used ChatGPT and Claude for coding assistance, accelerating API development and troubleshooting.</li>
+            <li>Generated code documentation and inline comments with AI tools to improve codebase maintainability.</li>
           </ul>
         </div>
 
         <div class="item">
-          <p class="itemTitle">Technology Brainz — Web Developer</p>
+          <p class="itemTitle">Technology Brainz</p>
+          <p class="itemRole">Web Developer</p>
           <p class="itemMeta">2019 – 2023 · Onsite</p>
           <ul>
             <li>Delivered full-stack solutions using Laravel, Vue.js, and MySQL.</li>
             <li>Mentored 4 junior developers and introduced coding standards.</li>
             <li>Optimized queries/caching, cutting response time by 30%.</li>
             <li>Built Vue.js UIs improving customer engagement.</li>
+            <li>Began adopting early AI coding assistants toward the end of tenure to speed up delivery on final project cycles.</li>
           </ul>
         </div>
       </section>
 
       <aside class="card">
-        <h2>Core Skills</h2>
+        <h2>GET /skills</h2>
         <div class="chips">
           <span class="chip">Laravel</span>
           <span class="chip">PHP</span>
@@ -309,35 +353,34 @@
           <span class="chip">REST APIs</span>
           <span class="chip">MySQL</span>
           <span class="chip">PostgreSQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">SQL</span>
+          <span class="chip">NoSQL</span>
           <span class="chip">Redis</span>
           <span class="chip">Docker</span>
           <span class="chip">Git</span>
           <span class="chip">Agile / Scrum</span>
           <span class="chip">WebSockets</span>
+          <span class="chip ai">Claude Code</span>
+          <span class="chip ai">Cursor</span>
+          <span class="chip ai">ChatGPT/Claude AI</span>
         </div>
 
         <div style="height: 14px"></div>
 
-        <h2>Education</h2>
-        <div class="item" style="padding-bottom: 0">
+        <h2>GET /education</h2>
+        <div class="item">
           <p class="itemTitle">University of Sargodha</p>
           <p class="itemMeta">BSc Information Technology · 2015 – 2019 · Pakistan</p>
+        </div>
+        <div class="item" style="padding-bottom: 0">
+          <p class="itemTitle">Imagine Foundation e.V.</p>
+          <p class="itemMeta">Imagine Fellowship, Career Coaching and Development Program · Dec 2024 – Dec 2025</p>
         </div>
       </aside>
 
       <section class="card" style="grid-column: 1 / -1">
-        <h2>Selected Projects</h2>
-
-        <div class="item">
-          <p class="itemTitle">Enova Bids — Real-time Auction Platform</p>
-          <ul>
-            <li>Built a real-time auction system with WebSockets delivering sub-100ms latency.</li>
-            <li>Scaled platform to handle thousands of concurrent bidders across multiple auctions.</li>
-            <li>Integrated Redis-based caching to optimize real-time bidding operations.</li>
-            <li>Designed React.js UI with live updates, notifications, and bidding dashboards.</li>
-            <li>Implemented secure authentication, payment integration, and audit trails.</li>
-          </ul>
-        </div>
+        <h2>GET /projects</h2>
 
         <div class="item">
           <p class="itemTitle">E-vent — Event Management System</p>
@@ -366,6 +409,14 @@
             <li>Designed GraphQL APIs for real-time product listings, bids, and orders.</li>
             <li>Integrated payment gateways, invoice generation, and financial reports.</li>
             <li>Optimized database queries to handle thousands of concurrent product views.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <p class="itemTitle">HOPE International — "Where We Serve" Page (AI-Assisted Design-to-Code)</p>
+          <ul>
+            <li>Implemented a Figma design as a responsive HTML/Tailwind CSS page using Figma's MCP integration to extract design tokens, typography, and layout directly from source files.</li>
+            <li>Built a complete single-file responsive implementation including a world map, region cards, and footer — cutting manual design-to-code translation time.</li>
           </ul>
         </div>
       </section>
