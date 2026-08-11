@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Space_Grotesk, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-display', display: 'swap' })
+const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Portfolio',
-  description: 'Personal portfolio',
+  title: 'Awais Arshad — Senior PHP/Laravel Developer',
+  description: 'Portfolio of Awais Arshad, Senior PHP/Laravel Developer. Ask the built-in AI assistant about his experience, skills, and projects.',
 }
 
 export default function RootLayout({
@@ -15,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-background text-foreground`}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
+      <body className="font-sans bg-background text-foreground antialiased">{children}</body>
     </html>
   )
 }
