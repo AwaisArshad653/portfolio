@@ -43,7 +43,7 @@ export default function Portfolio() {
         </div>
       </nav>
 
-      <div id="top" className="container mx-auto max-w-5xl px-4 py-12 relative">
+      <div id="top" className="container mx-auto max-w-5xl px-4 py-12 relative scroll-mt-24">
         <MinimalProfileStatic personal={portfolioData.personal} />
 
         <AskConsoleStatic />
