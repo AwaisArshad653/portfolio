@@ -153,7 +153,7 @@
     {
       "name": "E-vent – Event Management System",
       "description": "• Designed and developed GraphQL APIs for event scheduling, sessions, and attendees.\n• Built Vue.js dashboards with interactive scheduling, live updates, and reporting tools.\n• Implemented role-based access control for organizers, sponsors, and participants.\n• Optimized backend queries and caching, reducing load times by 35%.\n• Integrated real-time notifications, ticket booking, and payments.\n• Increased system reliability and scalability for events with thousands of users.",
-      "picUrl": null,
+      "picUrl": "/user-files/projects/e-vent.jpg",
       "technologies": [
         {
           "name": "laravel",
@@ -183,7 +183,7 @@
     {
       "name": "KwelaApp – Ticketing & Booking Platform",
       "description": "• Developed complete ticketing and booking system with secure payment processing.\n• Built REST APIs enabling mobile app integration and third-party services.\n• Created organizer dashboards with detailed reporting and analytics.\n• Designed booking flow reducing checkout friction, increasing conversions by 25%.\n• Implemented refund, cancellation, and automated email notification workflows.\n• Enhanced security with token-based authentication and rate limiting.",
-      "picUrl": null,
+      "picUrl": "/user-files/projects/kwelaapp.jpg",
       "technologies": [
         {
           "name": "laravel",
@@ -213,7 +213,7 @@
     {
       "name": "Laugh Factory – Entertainment Platform",
       "description": "• Maintained and extended a high-traffic entertainment platform serving millions monthly.\n• Migrated legacy modules, optimized backend performance and SEO rankings.\n• Built content management features for comedy shows, videos, and events.\n• Improved mobile responsiveness and front-end UX using jQuery and Bootstrap.\n• Automated content publishing workflows for editors and admins.",
-      "picUrl": null,
+      "picUrl": "/user-files/projects/laugh-factory.jpg",
       "technologies": [
         {
           "name": "CodeIgniter 3",
@@ -243,7 +243,7 @@
     {
       "name": "Geo Nova Labs – Geo Data Platform",
       "description": "• Developed backend infrastructure for large scientific geospatial datasets.\n• Designed REST APIs consumed by researchers and data visualization tools.\n• Implemented data security measures with role-based access and logging.\n• Optimized PostgreSQL queries and indexing for big-data performance.\n• Improved documentation, onboarding guides, and user adoption.",
-      "picUrl": null,
+      "picUrl": "/user-files/projects/geonova-labs.jpg",
       "technologies": [
         {
           "name": "laravel",
@@ -273,7 +273,7 @@
     {
       "name": "Abstract.index.ae – Corporate Events",
       "description": "• Built enterprise platform for managing international conferences and exhibitions.\n• Designed multi-user dashboards for sponsors, exhibitors, attendees, and organizers.\n• Automated event workflows including registration, scheduling, and ticketing.\n• Integrated Docker-based deployment for scalable hosting.\n• Supported 10k+ active participants across multiple events.",
-      "picUrl": null,
+      "picUrl": "/user-files/projects/abstract-index-ae.jpg",
       "technologies": [
         {
           "name": "laravel",
@@ -295,7 +295,7 @@
     {
       "name": "Market.index.ae – B2B Marketplace",
       "description": "• Developed a secure B2B marketplace with vendor, buyer, and admin dashboards.\n• Designed GraphQL APIs for real-time product listings, bids, and orders.\n• Integrated payment gateways, invoice generation, and financial reports.\n• Optimized database queries to handle thousands of concurrent product views.",
-      "picUrl": null,
+      "picUrl": "/user-files/projects/market-index-ae.jpg",
       "technologies": [
         {
           "name": "laravel",
