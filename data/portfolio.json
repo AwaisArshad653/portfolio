@@ -2,7 +2,7 @@
   "personal": {
     "full_name": "Awais Arshad",
     "title": "Senior PHP/Laravel Developer",
-    "about_me": "Senior PHP/Laravel Developer with over 6 years of experience delivering scalable web applications. Skilled in Laravel, Vue.js, GraphQL, and Node.js with strong expertise in REST APIs, real-time applications, and database optimization. Proven track record of building enterprise-grade solutions, mentoring junior developers, and thriving in remote Agile teams.",
+    "about_me": "Senior PHP/Laravel Developer with over 6 years of experience delivering scalable web applications. Skilled in Laravel, Vue.js, GraphQL, and Node.js with strong expertise in REST APIs, real-time applications, and database optimization. Proven track record of building enterprise-grade solutions, mentoring junior developers, and thriving in remote Agile teams. Experienced in using AI-assisted development tools (Claude Code, Cursor, ChatGPT/Claude) to speed up delivery, automate repetitive engineering tasks, and streamline design-to-code workflows.",
     "location": "Lahore, Pakistan",
     "avatarUrl": "/user-files/avatar/profile.png-1777034160082.png",
     "cvUrl": "/user-files/cv/cv.html",
@@ -97,6 +97,18 @@
       "logo": "/icons/postgresql/postgresql-original.svg"
     },
     {
+      "name": "MongoDB",
+      "logo": null
+    },
+    {
+      "name": "SQL",
+      "logo": null
+    },
+    {
+      "name": "NoSQL",
+      "logo": null
+    },
+    {
       "name": "Redis",
       "logo": "/icons/redis/redis-original.svg"
     },
@@ -122,6 +134,18 @@
     },
     {
       "name": "WebSockets",
+      "logo": null
+    },
+    {
+      "name": "Claude Code",
+      "logo": null
+    },
+    {
+      "name": "Cursor",
+      "logo": null
+    },
+    {
+      "name": "ChatGPT/Claude AI",
       "logo": null
     }
   ],
@@ -288,9 +312,9 @@
       "company": "Techlio Pvt Ltd",
       "position": "Senior Software Engineer",
       "location": "Onsite",
-      "start_date": "2025",
+      "start_date": "Oct 2025",
       "end_date": "Present",
-      "description": "Developed enterprise-grade Laravel apps integrated with Vue.js.\nBuilt secure REST APIs supporting thousands of daily users.\nImplemented unit testing and CI/CD pipelines (reduced errors by 40%).\nCollaborated with Agile teams to deliver projects on time.",
+      "description": "• Developed enterprise-grade Laravel apps integrated with Vue.js.\n• Built secure REST APIs supporting thousands of daily users.\n• Implemented unit testing and CI/CD pipelines (reduced errors by 40%).\n• Collaborated with Agile teams to deliver projects on time.\n• Use Claude Code and Cursor for agentic coding, speeding up feature development and cutting manual boilerplate work.\n• Apply AI-assisted debugging and test generation to catch edge cases earlier and raise code coverage.\n• Automate recurring development tasks (CI/CD scripts, documentation) with AI tools to streamline team workflows.",
       "logoUrl": null,
       "custom_links": []
     },
@@ -299,8 +323,8 @@
       "position": "Web Developer",
       "location": "Onsite",
       "start_date": "2023",
-      "end_date": "2025",
-      "description": "• Developed enterprise-grade Laravel apps integrated with Vue.js.\n• Built secure REST APIs supporting thousands of daily users.\n• Implemented unit testing and CI/CD pipelines (reduced errors by 40%).\n• Collaborated with Agile teams to deliver projects on time.",
+      "end_date": "Oct 2025",
+      "description": "• Developed enterprise-grade Laravel apps integrated with Vue.js.\n• Built secure REST APIs supporting thousands of daily users.\n• Implemented unit testing and CI/CD pipelines (reduced errors by 40%).\n• Collaborated with Agile teams to deliver projects on time.\n• Used ChatGPT and Claude for coding assistance, accelerating API development and troubleshooting.\n• Generated code documentation and inline comments with AI tools to improve codebase maintainability.",
       "logoUrl": null,
       "custom_links": []
     },
@@ -310,7 +334,7 @@
       "location": "Onsite",
       "start_date": "2019",
       "end_date": "2023",
-      "description": "• Delivered full-stack solutions using Laravel, Vue.js, MySQL.\n• Mentored 4 junior developers, introduced coding standards.\n• Optimized queries/caching, cutting response time by 30%.\n• Built Vue.js UIs improving customer engagement.",
+      "description": "• Delivered full-stack solutions using Laravel, Vue.js, MySQL.\n• Mentored 4 junior developers, introduced coding standards.\n• Optimized queries/caching, cutting response time by 30%.\n• Built Vue.js UIs improving customer engagement.\n• Began adopting early AI coding assistants toward the end of tenure to speed up delivery on final project cycles.",
       "logoUrl": null,
       "custom_links": []
     }
@@ -322,6 +346,16 @@
       "location": "Pakistan",
       "start_year": "2015",
       "end_year": "2019",
+      "description": null,
+      "logoUrl": null,
+      "custom_links": []
+    },
+    {
+      "degree": "Imagine Fellowship, Career Coaching and Development Program",
+      "university": "Imagine Foundation e.V.",
+      "location": null,
+      "start_year": "Dec 2024",
+      "end_year": "Dec 2025",
       "description": null,
       "logoUrl": null,
       "custom_links": []
