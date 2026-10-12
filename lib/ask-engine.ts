@@ -44,11 +44,12 @@ export function answerQuestion(raw: string): string {
   }
 
   // Contact / hire
-  if (/(contact|email|hire|reach|connect|get in touch|available|freelance)/.test(q)) {
+  if (/(contact|email|phone|call|number|whatsapp|hire|reach|connect|get in touch|available|freelance)/.test(q)) {
     const email = portfolioData.personal.custom_links.find((l) => l.icon === 'email')?.url
     const linkedin = portfolioData.personal.custom_links.find((l) => l.icon === 'linkedin')?.url
     const github = portfolioData.personal.custom_links.find((l) => l.icon === 'github')?.url
-    return `Best way to reach ${portfolioData.personal.full_name.split(' ')[0]} is by email at ${email}. He's also on LinkedIn (${linkedin}) and GitHub (${github}). Use the buttons above the fold too.`
+    const phone = portfolioData.personal.custom_links.find((l) => l.icon === 'phone')?.title
+    return `Best way to reach ${portfolioData.personal.full_name.split(' ')[0]} is by email at ${email}${phone ? ` or by phone at ${phone}` : ''}. He's also on LinkedIn (${linkedin}) and GitHub (${github}). Use the buttons above the fold too.`
   }
 
   // Resume / CV

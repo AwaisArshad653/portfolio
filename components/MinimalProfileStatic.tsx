@@ -114,8 +114,7 @@ export default function MinimalProfileStatic({ personal }: StaticPersonalData) {
                   <a
                     key={index}
                     href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(link.url.startsWith('tel:') ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                     title={link.title}
                     className="inline-flex items-center gap-2 rounded-md border border-border px-3 py-1.5 font-mono text-xs text-muted-foreground hover:text-primary hover:border-primary/60 hover:-translate-y-0.5 transition-all"
                   >

@@ -10,7 +10,8 @@ import {
   Edit,
   Briefcase,
   Award,
-  Mail
+  Mail,
+  Phone
 } from 'lucide-react';
 import { DiscordLogoIcon } from '@radix-ui/react-icons';
 import { SafeSvgRenderer } from '@/components/ui/safe-svg-renderer';
@@ -75,7 +76,8 @@ export function renderIcon(iconKey: string, className?: string) {
     blog: Edit,
     portfolio: Briefcase,
     certificate: Award,
-    email: Mail
+    email: Mail,
+    phone: Phone
   }
   const IconComponent = iconMap[iconKey] || Globe
   return <IconComponent className={iconClasses} />
