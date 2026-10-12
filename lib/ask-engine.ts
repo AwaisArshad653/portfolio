@@ -36,7 +36,7 @@ function yearsOfExperience(): string {
 
 export function answerQuestion(raw: string): string {
   const q = norm(raw)
-  if (!q) return "Ask me something — try \"What's his Laravel experience?\" or \"How do I contact him?\""
+  if (!q) return "Ask me something — try \"What's his tech stack?\" or \"How do I contact him?\""
 
   // Greeting
   if (/^(hi|hello|hey|yo|salaam|assalam)\b/.test(q)) {
@@ -59,7 +59,7 @@ export function answerQuestion(raw: string): string {
 
   // Years of experience
   if (/(how many years|years of experience|experience level|how long)/.test(q)) {
-    return `${portfolioData.personal.full_name.split(' ')[0]} has ${yearsOfExperience()}+ years of experience building backend and full-stack web applications, primarily with Laravel and Vue.js.`
+    return `${portfolioData.personal.full_name.split(' ')[0]} has ${yearsOfExperience()}+ years of experience designing, building, and scaling backend and full-stack web applications.`
   }
 
   // AI tooling
@@ -129,7 +129,7 @@ export function answerQuestion(raw: string): string {
 }
 
 export const SUGGESTED_QUESTIONS = [
-  "What's his Laravel experience?",
+  "What's his tech stack?",
   'Does he use AI tools?',
   'What is he working on now?',
   'How do I contact him?',

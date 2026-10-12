@@ -7,8 +7,8 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-displ
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Awais Arshad — Senior PHP/Laravel Developer',
-  description: 'Portfolio of Awais Arshad, Senior PHP/Laravel Developer. Ask the built-in AI assistant about his experience, skills, and projects.',
+  title: 'Awais Arshad — Senior Software Engineer',
+  description: 'Portfolio of Awais Arshad, Senior Software Engineer. Ask the built-in AI assistant about his experience, skills, and projects.',
 }
 
 export default function RootLayout({
