@@ -3,36 +3,58 @@
 @tailwind utilities;
 
 @layer base {
-
+  /*
+   * Lapis & paper.
+   * Cool off-white paper and slate ink, with a lapis blue drawn from the
+   * tile work of Lahore's old city. Teal is reserved for small status cues.
+   */
   :root {
-    /* API Console theme — deep ink navy, signal blue, mint "200 OK", amber highlight */
-    --background: 222 47% 6%;
-    --foreground: 210 40% 96%;
-    --card: 222 39% 11%;
-    --card-foreground: 210 40% 96%;
-    --popover: 222 39% 11%;
-    --popover-foreground: 210 40% 96%;
-    --primary: 217 91% 68%;
-    --primary-foreground: 222 47% 6%;
-    --secondary: 222 32% 15%;
-    --secondary-foreground: 210 40% 96%;
-    --muted: 222 32% 14%;
-    --muted-foreground: 215 16% 65%;
-    --accent: 222 32% 17%;
-    --accent-foreground: 210 40% 96%;
-    --destructive: 0 72% 60%;
-    --destructive-foreground: 210 40% 96%;
-    --border: 222 24% 20%;
-    --input: 222 24% 20%;
-    --ring: 217 91% 68%;
-    --radius: 0.65rem;
-    --mint: 158 64% 47%;
-    --amber: 38 92% 55%;
-    --chart-1: 217 91% 68%;
-    --chart-2: 158 64% 47%;
-    --chart-3: 38 92% 55%;
-    --chart-4: 280 65% 65%;
-    --chart-5: 340 75% 60%;
+    --background: 75 14% 95%;      /* #F4F5F1 paper */
+    --foreground: 210 29% 13%;     /* #18222C ink */
+    --card: 60 23% 98%;            /* #FBFBF8 raised paper */
+    --card-foreground: 210 29% 13%;
+    --popover: 60 23% 98%;
+    --popover-foreground: 210 29% 13%;
+    --primary: 229 63% 47%;        /* #2C47C4 lapis */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 80 10% 90%;
+    --secondary-foreground: 210 29% 13%;
+    --muted: 80 10% 91%;
+    --muted-foreground: 208 10% 38%; /* #58636D */
+    --accent: 229 63% 95%;
+    --accent-foreground: 229 63% 35%;
+    --destructive: 0 65% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 94 9% 85%;           /* #D9DDD6 */
+    --input: 94 9% 80%;
+    --ring: 229 63% 47%;
+    --radius: 0.75rem;
+    --teal: 172 74% 27%;           /* #127A6C */
+    --panel: 229 63% 47%;          /* photo panel */
+  }
+
+  .dark {
+    --background: 212 30% 8%;      /* #0F151C */
+    --foreground: 210 17% 92%;     /* #E6EAEE */
+    --card: 210 31% 11%;           /* #141D26 */
+    --card-foreground: 210 17% 92%;
+    --popover: 210 31% 11%;
+    --popover-foreground: 210 17% 92%;
+    --primary: 230 100% 80%;       /* #99AAFF */
+    --primary-foreground: 212 30% 8%;
+    --secondary: 210 25% 15%;
+    --secondary-foreground: 210 17% 92%;
+    --muted: 210 25% 14%;
+    --muted-foreground: 208 12% 66%;
+    --accent: 229 40% 18%;
+    --accent-foreground: 230 100% 86%;
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 212 30% 8%;
+    --border: 209 23% 19%;         /* #26323D */
+    --input: 209 23% 24%;
+    --ring: 230 100% 80%;
+    --teal: 169 50% 53%;           /* #4CC3AE */
+    --panel: 229 52% 36%;
   }
 }
 
@@ -42,60 +64,39 @@
   }
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "kern", "liga";
   }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  ::selection {
+    background: hsl(var(--primary) / 0.2);
+  }
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
 @layer utilities {
-  /* Hide scrollbar while keeping scroll functionality */
+  .font-display {
+    font-variation-settings: "opsz" 72;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
   .hide-scrollbar {
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-
   .hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, newer Edge */
+    display: none;
   }
-
-  /* Faint dot grid — evokes a schema/blueprint canvas */
-  .bg-grid {
-    background-image: radial-gradient(hsl(var(--border)) 1px, transparent 1px);
-    background-size: 24px 24px;
-  }
-}
-
-@keyframes orbit {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateX(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
-  }
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateX(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
-  }
-}
-
-@keyframes orbit-reverse {
-  0% {
-    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateX(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
-  }
-  100% {
-    transform: rotate(calc(var(--angle) * 1deg)) translateX(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
-  }
-}
-
-.animate-orbit {
-  animation: orbit calc(var(--duration) * 1s) linear infinite;
-}
-
-.animate-orbit-reverse {
-  animation: orbit-reverse calc(var(--duration) * 1s) linear infinite;
 }
 
 @keyframes caret-blink {
@@ -105,23 +106,14 @@
 }
 
 .animate-caret {
-  animation: caret-blink 1.1s step-end infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.85); }
-}
-
-.animate-pulse-dot {
-  animation: pulse-dot 1.8s ease-in-out infinite;
+  animation: caret-blink 1s step-end infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-orbit,
-  .animate-orbit-reverse,
-  .animate-caret,
-  .animate-pulse-dot {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-caret {
     animation: none !important;
   }
 }

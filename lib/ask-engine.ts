@@ -40,7 +40,7 @@ export function answerQuestion(raw: string): string {
 
   // Greeting
   if (/^(hi|hello|hey|yo|salaam|assalam)\b/.test(q)) {
-    return `Hey! I'm a static assistant built from ${portfolioData.personal.full_name}'s portfolio data. Ask about his experience, skills, projects, or how to reach him.`
+    return `Hey! I answer from ${portfolioData.personal.full_name}'s portfolio data. Ask about his experience, skills, projects, or how to reach him.`
   }
 
   // Contact / hire
@@ -49,12 +49,12 @@ export function answerQuestion(raw: string): string {
     const linkedin = portfolioData.personal.custom_links.find((l) => l.icon === 'linkedin')?.url
     const github = portfolioData.personal.custom_links.find((l) => l.icon === 'github')?.url
     const phone = portfolioData.personal.custom_links.find((l) => l.icon === 'phone')?.title
-    return `Best way to reach ${portfolioData.personal.full_name.split(' ')[0]} is by email at ${email}${phone ? ` or by phone at ${phone}` : ''}. He's also on LinkedIn (${linkedin}) and GitHub (${github}). Use the buttons above the fold too.`
+    return `Best way to reach ${portfolioData.personal.full_name.split(' ')[0]} is by email at ${email}${phone ? ` or by phone at ${phone}` : ''}. He's also on LinkedIn (${linkedin}) and GitHub (${github}). The email and phone links are at the top and bottom of the page.`
   }
 
   // Resume / CV
   if (/(resume|\bcv\b|download)/.test(q)) {
-    return `You can grab the full resume from the "Resume" button at the top of the page — it has the complete work history, education, and skills in one document.`
+    return `You can grab the full resume from the "View resume" button at the top of the page — it has the complete work history, education, and skills in one document.`
   }
 
   // Years of experience
@@ -100,7 +100,7 @@ export function answerQuestion(raw: string): string {
       .slice(0, 4)
       .map((p) => `• ${p.name}`)
       .join('\n')
-    return `A few things he's built:\n${list}\n\nScroll down to GET /projects for the full writeups.`
+    return `A few things he's built:\n${list}\n\nScroll down to Selected projects for the details.`
   }
 
   // Location
@@ -122,7 +122,7 @@ export function answerQuestion(raw: string): string {
   // Skills list fallback
   if (/(skill|tech stack|technolog|know|proficient)/.test(q)) {
     const names = portfolioData.skills.slice(0, 10).map((s) => s.name).join(', ')
-    return `Core stack: ${names}, and more — see GET /skills below for the full list.`
+    return `Core stack: ${names}, and more — see Skills below for the full list.`
   }
 
   return `I don't have a direct answer for that yet. Try asking about his experience, skills, projects, education, or how to get in touch.`

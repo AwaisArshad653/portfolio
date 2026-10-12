@@ -17,9 +17,8 @@ const config = {
   	},
   	extend: {
   		fontFamily: {
-  			sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-  			display: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-  			mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace']
+  			sans: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+  			display: ['"Newsreader Variable"', 'Georgia', 'ui-serif', 'serif']
   		},
   		colors: {
   			border: 'hsl(var(--border))',
@@ -55,8 +54,8 @@ const config = {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'
   			},
-  			mint: 'hsl(var(--mint))',
-  			amber: 'hsl(var(--amber))'
+  			teal: 'hsl(var(--teal))',
+  			panel: 'hsl(var(--panel))'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

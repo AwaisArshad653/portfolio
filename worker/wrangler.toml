@@ -1,0 +1,23 @@
+name = "portfolio-ask"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+workers_dev = true
+
+[vars]
+# Sites allowed to call the assistant (comma-separated, exact origins).
+ALLOWED_ORIGINS = "https://awaisarshad653.github.io,http://localhost:3000"
+# Claude model and answer length. Haiku is fast and inexpensive for short answers.
+MODEL = "claude-haiku-5-5"
+MAX_TOKENS = "500"
+
+# Per-visitor rate limit: 10 questions per minute per IP.
+[[ratelimits]]
+name = "ASK_LIMITER"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 10
+  period = 60
+
+# Secret (not stored here): ANTHROPIC_API_KEY
+#   npx wrangler secret put ANTHROPIC_API_KEY

@@ -25,6 +25,41 @@ npm run build
 
 The build output will be in the `out/` directory.
 
+## 🤖 AI assistant (Claude)
+
+The "Ask about my work" section answers questions with Claude, Anthropic's model.
+Because GitHub Pages only serves static files, the Anthropic API key lives in a small
+Cloudflare Worker (`worker/`). The site calls that worker; if it isn't configured or
+can't be reached, the section falls back to the built-in offline answers (`lib/ask-engine.ts`).
+
+**One-time setup**
+
+1. **Anthropic key** — create one at [console.anthropic.com](https://console.anthropic.com) and set a monthly spend limit there.
+2. **Cloudflare** — create a free account. Copy your **Account ID** (Workers & Pages overview) and create an
+   **API token** with the *Edit Cloudflare Workers* template.
+3. **GitHub secrets** — in this repo go to *Settings → Secrets and variables → Actions → Secrets* and add
+   `ANTHROPIC_API_KEY`, `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+4. **Deploy the worker** — *Actions → Deploy AI assistant (Cloudflare Worker) → Run workflow*.
+   The run summary shows the worker URL (`https://portfolio-ask.<your-subdomain>.workers.dev`).
+5. **Point the site at it** — add a repository **variable** (*Variables* tab) named `ASK_API_URL` with that URL,
+   then re-run *Deploy to GitHub Pages*.
+
+After that, the worker redeploys automatically whenever `worker/` or `data/portfolio.json` changes,
+so Claude always answers from the current profile.
+
+**Settings** (`worker/wrangler.toml`): `MODEL` (default `claude-haiku-5-5`), `MAX_TOKENS`,
+`ALLOWED_ORIGINS` (sites allowed to call the worker), and a per-visitor limit of 10 questions a minute.
+
+**Local development**
+
+```bash
+cd worker && npm install && npm test
+npx wrangler secret put ANTHROPIC_API_KEY   # once, if deploying from your machine
+npx wrangler dev                            # http://localhost:8787
+# in another terminal, from the repo root:
+NEXT_PUBLIC_ASK_API_URL=http://localhost:8787 npm run dev
+```
+
 ## 📦 Deployment Options
 
 Your portfolio is a static Next.js site and can be deployed anywhere that hosts static files:
